@@ -3,7 +3,7 @@ pipeline {
     stages {
          stage('Upload to AWS') {
         steps {
-          withAWS(region:'us-east-1',credentials:'blueocean') {
+          withAWS(region:'us-east-2',credentials:'blueocean') {
             s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:'index.html', bucket:'static-project-repo')
           }
         }
